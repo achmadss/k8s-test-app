@@ -7,15 +7,14 @@ metadata:
   labels:
     app: k8s-test-app
   annotations:
-    nginx.ingress.kubernetes.io/use-regex: "true"
-    nginx.ingress.kubernetes.io/rewrite-target: /$2
+    nginx.ingress.kubernetes.io/rewrite-target: /
 
 spec:
   rules:
     - http:
         paths:
-        - path: /v1(/|$)(.*)
-          pathType: ImplementationSpecific
+        - path: /v1
+          pathType: Prefix
           backend:
             service:
               name: k8s-test-app-service
