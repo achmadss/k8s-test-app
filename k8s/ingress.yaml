@@ -6,8 +6,8 @@ metadata:
   name: k8s-test-app-ingress
   labels:
     app: k8s-test-app
-  # annotations:
-  #   nginx.ingress.kubernetes.io/rewrite-target: /
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 
 spec:
   rules:
