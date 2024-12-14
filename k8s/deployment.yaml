@@ -1,0 +1,29 @@
+apiVersion: v1
+
+kind: Deployment
+
+metadata:
+  name: k8s-test-app
+  labels:
+    app: k8s-test-app
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: k8s-test-app
+  template:
+    metadata:
+      labels:
+        app: k8s-test-app
+    spec:
+      containers:
+      - name: k8s-test-app
+        image: novan921/k8s-test-app:latest
+        env:
+        - name: WORKER
+          valueFrom:
+            fieldRef:
+              fieldPath: spec.nodeName
+        ports:
+        - containerPort: 3000
