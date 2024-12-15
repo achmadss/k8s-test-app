@@ -22,3 +22,22 @@ spec:
               name: k8s-test-app-service
               port:
                 number: 3000
+
+# ---
+
+apiVersion: metallb.io/v1beta1
+kind: IPAddressPool
+metadata:
+  name: k8s-test-app-lb-ip-pool
+  namespace: metallb-system
+spec:
+  addresses:
+  - 192.168.198.100
+
+# ---
+
+apiVersion: metallb.io/v1beta1
+kind: L2Advertisement
+metadata:
+  name: k8s-test-app-lb-ad
+  namespace: metallb-system
