@@ -9,8 +9,5 @@ spec:
   selector:
     app: k8s-test-app
   ports:
-    - protocol: TCP
-      port: 3000
-      targetPort: 3000
-      # nodePort: 30000
-  type: NodePort
+    port: 3000
+    targetPort: 3000
