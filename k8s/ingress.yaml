@@ -41,3 +41,6 @@ kind: L2Advertisement
 metadata:
   name: k8s-test-app-lb-ad
   namespace: metallb-system
+spec:
+  ipAddressPools:
+  - k8s-test-app-lb-ip-pool
