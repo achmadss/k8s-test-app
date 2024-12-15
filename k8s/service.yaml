@@ -10,7 +10,7 @@ spec:
     app: k8s-test-app
   ports:
     - protocol: TCP
-      port: 80
+      port: 30566
       targetPort: 80
-      nodePort: 30566
+      nodePort: 30080
   type: NodePort
