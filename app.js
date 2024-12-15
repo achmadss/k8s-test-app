@@ -8,7 +8,9 @@ const port = 3000;
 app.get('/', (req, res) => {
     const hostname = _hostname(); // Pod name
     const worker = process.env.WORKER || 'Unknown Worker'; // Node hostname passed as an environment variable
-    res.send(`<h1>Hello! I'm from ${worker} on pod ${hostname}</h1>`);
+    let output = `Hello! I'm from ${worker} on pod ${hostname}`
+    console.log(output)
+    res.send(`<h1>${output}</h1>`);
 });
 
 // Start the server
