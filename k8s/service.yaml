@@ -7,8 +7,7 @@ metadata:
   
 spec:
   selector:
-    matchLabels:
-      app: k8s-test-app
+    app: k8s-test-app
   ports:
     - protocol: TCP
       port: 3000
