@@ -17,13 +17,6 @@ spec:
               name: k8s-test-app-service
               port:
                 number: 3000
-        - path: /gist(/|$)(.*)
-          pathType: Prefix
-          backend:
-            service:
-              name: opengist-service
-              port:
-                number: 6157
 
 ---
 
